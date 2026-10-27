@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Green Corridor AI</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<header><div class="mark">GC</div><div><p class="eyebrow">HACKATHON PROTOTYPE · AI & DEVELOPER TOOLS</p><h1>Green Corridor AI</h1><p class="sub">Route-aware traffic coordination concept for emergency response</p></div><span class="pill">Simulation mode</span></header>
+<main><p class="notice"><b>Prototype boundary:</b> Fictional road network and simulated signal delays only. This demo does not connect to or control real traffic lights.</p>
+<div class="layout"><section class="panel controls"><p class="eyebrow">01 / INPUTS</p><h2>Plan a corridor</h2>
+<label for="origin">Start junction</label><select id="origin"></select><label for="dest">Destination junction</label><select id="dest"></select>
+<label for="traffic">Traffic scenario</label><select id="traffic"><option value="normal">Normal traffic</option><option value="busy">Busy traffic</option></select>
+<button id="run">Simulate corridor</button><button id="reset" class="secondary">Reset demo</button><p class="small">Routing uses Dijkstra's shortest-path algorithm on a fixed graph.</p></section>
+<section class="panel"><p class="eyebrow">02 / ROUTE VIEW</p><h2>Fictional road network</h2><div class="map"><svg id="map" viewBox="0 0 700 400" aria-label="Fictional road network"></svg></div><p class="small">Green shows the suggested route after simulation.</p></section></div>
+<div class="results"><section class="panel"><p class="eyebrow">03 / ROUTE RESULT</p><h2>Suggested route</h2><p id="route" class="route">Choose endpoints and simulate.</p><div class="metrics"><div><small>Route distance</small><strong id="distance">—</strong></div><div><small>Junctions crossed</small><strong id="count">—</strong></div></div></section>
+<section class="panel"><p class="eyebrow">04 / TIMING MODEL</p><h2>Estimated signal delay</h2><div class="compare"><div class="base"><small>Baseline scenario</small><strong id="base">—</strong><small>Independent waits</small></div><div class="coord"><small>Coordinated simulation</small><strong id="coord">—</strong><small>Assumed reduced waits</small></div></div><p id="diff" class="small">Run a simulation to compare assumptions.</p></section></div>
+<section class="panel alert"><div><p class="eyebrow">05 / RESPONDER MESSAGE</p><h2>Corridor summary</h2><p id="summary">No corridor has been simulated yet.</p></div><button id="copy" class="secondary">Copy summary</button></section>
+<section class="panel"><p class="eyebrow">06 / TRANSPARENCY</p><h2>Event log</h2><ol id="log"><li>Demo ready. Select a start and destination.</li></ol></section></main>
+<footer>Green Corridor AI · Simulation only · Not for emergency dispatch or operational use</footer><script src="app.js"></script></body></html>
